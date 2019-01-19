@@ -1,0 +1,5 @@
+name: KillerTitle
+version: ${project.version}
+main: net.lapismc.killertitle.KillerTitle
+api-version: 1.13
+authors: [Dart2112]
