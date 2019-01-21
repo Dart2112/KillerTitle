@@ -1,6 +1,10 @@
+#How many seconds should it take for the title to fade in
 TitleFadeIn: 1
+#How many seconds should it stay solid
 TitleStay: .5
+#How many seconds should it take to fade out
 TitleFadeOut: 1
-
+#The message used in the title for the killer
 KillerMessage: "&4You killed %PLAYER%"
+#The message broadcast to the whole server
 BroadcastMessage: "&2%KILLER% &4Killed &2%PLAYER%"
