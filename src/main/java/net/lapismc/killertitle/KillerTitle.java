@@ -1,7 +1,6 @@
 package net.lapismc.killertitle;
 
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.ComponentBuilder;
+import com.connorlinfoot.titleapi.TitleAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -31,7 +30,10 @@ public final class KillerTitle extends JavaPlugin implements Listener {
             //Get the message and send it to the killer
             String message = getConfig().getString("KillerMessage").replace("%PLAYER%", damaged.getName());
             message = ChatColor.translateAlternateColorCodes('&', message);
-            damager.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(message).create());
+            Double fadeIn = getConfig().getDouble("TitleFadeIn") * 20;
+            Double stay = getConfig().getDouble("TitleStay") * 20;
+            Double fadeOut = getConfig().getDouble("TitleFadeOut") * 20;
+            TitleAPI.sendTitle(damager, fadeIn.intValue(), stay.intValue(), fadeOut.intValue(), message, null);
             //Send the world wide message
             message = getConfig().getString("BroadcastMessage").replace("%KILLER%", damager.getName()).replace("%PLAYER%", damaged.getName());
             message = ChatColor.translateAlternateColorCodes('&', message);

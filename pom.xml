@@ -6,7 +6,7 @@
 
     <groupId>net.lapismc</groupId>
     <artifactId>KillerTitle</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
 
     <name>KillerTitle</name>
@@ -17,6 +17,7 @@
 
     <build>
         <defaultGoal>clean package</defaultGoal>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -38,6 +39,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                             <minimizeJar>true</minimizeJar>
                         </configuration>
                     </execution>
@@ -69,6 +71,12 @@
             <artifactId>spigot-api</artifactId>
             <version>1.13.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ConnorLinfoot</groupId>
+            <artifactId>TitleAPI</artifactId>
+            <version>1.7.7</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
